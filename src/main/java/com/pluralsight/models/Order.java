@@ -1,5 +1,10 @@
 package com.pluralsight.models;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,6 +54,41 @@ public class Order {
         total+=this.chipsList.stream().mapToDouble(Chips::getPrice).sum();
         return total;
     }
+
+    public String orderDetails(){
+        StringBuilder orderDetails = new StringBuilder();
+        orderDetails.append("********* ORDER DETAILS *********\n");
+        if (!sandwichesList.isEmpty()) {
+            orderDetails.append("***** sandwiches list *****\n");
+            for (int i = sandwichesList.size() - 1; i >= 0; i--) {
+                orderDetails.append(sandwichesList.get(i)).append("\n");
+            }
+        }
+        if (!drinksList.isEmpty()) {
+            orderDetails.append("***** drink list *****\n");
+            for (int i = drinksList.size() - 1; i >= 0; i--) {
+                orderDetails.append(drinksList.get(i)).append("\n");
+            }
+        }
+        if (!chipsList.isEmpty()) {
+            orderDetails.append("***** sandwiches list *****\n");
+            for (int i = chipsList.size() - 1; i >= 0; i--) {
+                orderDetails.append(chipsList.get(i)).append("\n");
+            }
+        }
+        orderDetails.append("********** TOTAL ORDER DETAILS **********\n");
+        orderDetails.append(String.format("Total order: "+ "$%.2f\n", getTotal()));
+        orderDetails.append("*********************************************\n");
+        return orderDetails.toString();
+    }
+
+    public void receipts() throws IOException {
+        Path dir = Path.of("receipts");
+        Files.createDirectories(dir);
+        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-hhmmss"));
+
+    }
+
 
 
 
