@@ -19,7 +19,7 @@ Joffre Villacis
 - Generate and save receipts to a separate folder
 
 ## Project Structure
-<img src="pics/file_structure.jpeg">
+<img src="file_structure.jpeg">
 
 ## Future Improvement
 1. start learning how to implement gui
