@@ -1,5 +1,7 @@
 package com.pluralsight.models;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -57,7 +59,7 @@ public class Order {
 
     public String orderDetails(){
         StringBuilder orderDetails = new StringBuilder();
-        orderDetails.append("********* ORDER DETAILS *********\n");
+        orderDetails.append("********* ORDER DETAILS *********\n\n");
         if (!sandwichesList.isEmpty()) {
             orderDetails.append("***** sandwiches list *****\n");
             for (int i = sandwichesList.size() - 1; i >= 0; i--) {
@@ -76,7 +78,7 @@ public class Order {
                 orderDetails.append(chipsList.get(i)).append("\n");
             }
         }
-        orderDetails.append("********** TOTAL ORDER DETAILS **********\n");
+        orderDetails.append("\n********** TOTAL ORDER DETAILS **********\n");
         orderDetails.append(String.format("Total order: "+ "$%.2f\n", getTotal()));
         orderDetails.append("*********************************************\n");
         return orderDetails.toString();
@@ -85,7 +87,14 @@ public class Order {
     public void receipts() throws IOException {
         Path dir = Path.of("receipts");
         Files.createDirectories(dir);
-        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-hhmmss"));
+        String timeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-hhmmss"));
+        String file = dir+"/"+timeStamp+".txt";
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+            writer.write("Sandwich Shop\n");
+            writer.write("Time Stamp: "+timeStamp+"\n" );
+            writer.write(orderDetails());
+            System.out.println("Receipt saved.");
+        }
 
     }
 

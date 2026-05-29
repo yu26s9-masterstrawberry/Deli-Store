@@ -49,9 +49,9 @@ public class Sandwich {
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("%d\" %s sandwich%s", size, breadType, toasted ? " (toasted)" : ""));
         for (Topping t : toppings) {
-            sb.append("\n    - ").append(t);
+            sb.append("\n   - ").append(t);
         }
-        sb.append(String.format("\n    Subtotal: $%.2f", getPrice()));
+        sb.append(String.format("\n   Subtotal: $%.2f", getPrice()));
         return sb.toString();
     }
 }
