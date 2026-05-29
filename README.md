@@ -20,6 +20,8 @@ Joffre Villacis
 
 ## Project Structure
 <img src="file_structure.jpeg">
+<img src="UML.jpeg">
+
 
 ## Future Improvement
 1. start learning how to implement gui
