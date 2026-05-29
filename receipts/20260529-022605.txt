@@ -1,0 +1,18 @@
+Sandwich Shop
+Time Stamp: 20260529-022605
+********* ORDER DETAILS *********
+
+***** sandwiches list *****
+SignatureSandwich{signatureName='Bacon Sub'}8" wheat sandwich (toasted)
+   - bacon
+   - american
+   - tomatoes
+   - lettuce
+   - ketchup
+   - swiss (extra)
+   - ham (extra)
+   Subtotal: $12.10
+
+********** TOTAL ORDER DETAILS **********
+Total order: $12.10
+*********************************************

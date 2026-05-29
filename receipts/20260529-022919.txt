@@ -1,0 +1,10 @@
+Sandwich Shop
+Time Stamp: 20260529-022919
+********* ORDER DETAILS *********
+
+***** sandwiches list *****
+lays chips  $1.50
+
+********** TOTAL ORDER DETAILS **********
+Total order: $1.50
+*********************************************

@@ -1,0 +1,17 @@
+Sandwich Shop
+Time Stamp: 20260529-023141
+********* ORDER DETAILS *********
+
+***** sandwiches list *****
+12" rye sandwich
+   - cheddar
+   - chicken (extra)
+   - pickles
+   - mayo
+   - ketchup
+   - au jus
+   Subtotal: $12.25
+
+********** TOTAL ORDER DETAILS **********
+Total order: $12.25
+*********************************************
